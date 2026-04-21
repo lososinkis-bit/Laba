@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Стоимость услуг — Пример</title>
+  <!-- Локальное подключение Bootstrap 5 CSS -->
+  <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Навигационная панель сайта -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <div class="row w-100 align-items-center">
+
+      <!-- Левый блок: логотип -->
+      <div class="col-4 col-lg-2 d-flex align-items-center">
+        <a class="navbar-brand" href="#">
+          <img src="images/glavnii.jpg" alt="Логотип" style="height:40px;">
+        </a>
+      </div>
+
+      <!-- Центральный блок: основная навигация -->
+      <div class="col-4 col-lg-8 d-flex justify-content-center">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
+          <ul class="navbar-nav">
+            
+            <!-- Секция "Услуги" с выпадающим меню -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Услуги
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" href="#">Архитектурное проектирование</a></li>
+                <li><a class="dropdown-item" href="#">Дизайн интерьера</a></li>
+                <li><a class="dropdown-item" href="#">Ландшафтный дизайн</a></li>
+                <li><a class="dropdown-item" href="#">Другое</a></li>
+              </ul>
+            </li>
+
+            <!-- Портфолио -->
+            <li class="nav-item"><a class="nav-link" href="#">Портфолио</a></li>
+
+            <!-- Секция "О студии" с выпадающим меню -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="studioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                О студии
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="studioDropdown">
+                <li><a class="dropdown-item" href="#">О нас</a></li>
+                <li><a class="dropdown-item" href="#">Отзывы</a></li>
+                <li><a class="dropdown-item" href="#">Контакты</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Правый блок: контакт и кнопка -->
+      <div class="col-4 col-lg-2 d-flex justify-content-end align-items-center">
+        <!-- Телефон и город (показывается только на больших экранах) -->
+        <div class="me-3 text-end d-none d-lg-flex flex-column">
+          <div class="small text-muted" style="white-space: nowrap; max-width: 200px;">
+            Мы из вашего города
+          </div>
+          <div class="fw-semibold" style="white-space: nowrap; max-width: 200px;">
+            +7 (8442) 99-90-60
+          </div>
+        </div>
+        <!-- Кнопка "Рассчитать стоимость" -->
+        <a class="btn btn-light btn-lg border-dark text-dark" href="#calc">
+          Рассчитать стоимость
+        </a>
+      </div>
+
+      <!-- Кнопка-бургер для мобильных устройств -->
+      <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Главный блок / Hero -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="display-5 fw-bold">Стоимость услуг</h1>
+        <p class="lead">
+          Рассчитайте стоимость и сроки проектирования за 1 минуту. Узнайте условия работы и получите скидку.
+        </p>
+
+        <!-- Кнопка в центре экрана -->
+        <div class="mb-4">
+          <a href="#calc" class="btn btn-light btn-lg border-dark text-dark">
+            Рассчитать стоимость
+          </a>
+        </div>
+
+        <!-- Табуляция с категориями услуг -->
+        <ul class="nav nav-tabs justify-content-center" id="priceTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-all-tab" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">
+              Все цены
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-design-tab" data-bs-toggle="tab" data-bs-target="#tab-design" type="button" role="tab">
+              Дизайн интерьера
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-architecture-tab" data-bs-toggle="tab" data-bs-target="#tab-architecture" type="button" role="tab">
+              Архитектурное проектирование
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-landscape-tab" data-bs-toggle="tab" data-bs-target="#tab-landscape" type="button" role="tab">
+              Ландшафтный дизайн и благоустройство
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-other-tab" data-bs-toggle="tab" data-bs-target="#tab-other" type="button" role="tab">
+              Другое
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Секция с услугами и ценами -->
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="h4 mb-4">Стоимость разработки проекта дома</h2>
+
+        <!-- Описание -->
+        <p>
+          Цена зависит от площади дома, этажности, дополнительных элементов (гараж, бассейн и т.д.), 
+          состава проекта и срочности работы.
+        </p>
+
+        <!-- Картинка с диаграммой -->
+        <div class="text-center mb-4">
+          <img src="images/diag1.jpg" alt="Диаграмма распределения стоимости" class="img-fluid" style="max-width:600px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточки с услугами -->
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Архитектурный проект</h5>
+            <p class="card-text">Внешний вид, планировка дома.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fw-semibold">от 1 000 ₽/м²</span>
+              <a href="#" class="btn btn-sm btn-outline-primary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Дополнительные карточки аналогично... -->
+    </div>
+
+    <!-- Кнопка "Подробнее об услуге" внизу -->
+    <div class="row">
+      <div class="col text-center mt-4">
+        <button type="button" class="btn btn-light btn-lg border-dark text-dark">
+          Подробнее об услуге
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Футер сайта -->
+<footer class="bg-light py-5 mt-5 border-top">
+  <div class="container">
+    <div class="row align-items-start">
+
+      <!-- Левый блок: логотип и копирайт -->
+      <div class="col-md-3 mb-4 text-center text-md-start">
+        <img src="images/logo.jpg" alt="Логотип" class="img-fluid mb-2" style="max-width: 150px;">
+        <p class="small text-muted mb-0">© 2016–2025 Архитектурная мастерская Андрея Каралёва</p>
+      </div>
+
+      <!-- Правый блок: три колонки с ссылками и контактами -->
+      <div class="col-md-9">
+        <div class="row">
+
+          <!-- Услуги -->
+          <div class="col-md-4 mb-4">
+            <h6 class="fw-bold mb-3">УСЛУГИ</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark text-decoration-none">Проектирование домов</a></li>
+              <!-- остальные пункты аналогично -->
+            </ul>
+          </div>
+
+          <!-- О компании -->
+          <div class="col-md-4 mb-4">
+            <h6 class="fw-bold mb-3">О КОМПАНИИ</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark text-decoration-none">О нас</a></li>
+              <!-- остальные пункты аналогично -->
+            </ul>
+          </div>
+
+          <!-- Контакты -->
+          <div class="col-md-4 mb-4">
+            <h6 class="fw-bold mb-3">МЫ ЖДЁМ ВАС В НАШЕМ ОФИСЕ:</h6>
+            <p class="mb-1">Россия, Волгоград, Канунникова 6/1, офис 608, 6 этаж</p>
+            <p class="mb-1">Мы работаем: пн–пт 9:00–17:30</p>
+            <p class="mb-1">Почта: <a href="mailto:info@arxm.ru" class="text-dark">info@arxm.ru</a></p>
+            <p class="mb-0">Тел: +7 (495) 980-7771 Москва</p>
+            <p class="mb-0">Тел: +7 (8442) 999-060 Волгоград</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Локальное подключение JS Bootstrap -->
+<script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
