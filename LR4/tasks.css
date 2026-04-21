@@ -1,0 +1,168 @@
+/* Простые стили для 4 заданий */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Ссылки на примеры */
+.presets {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.presets a {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.presets a:hover {
+    background: #0056b3;
+}
+
+.presets a:last-child {
+    background: #6c757d;
+}
+
+/* Форма */
+form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    height: 150px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Результаты */
+.result-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/* Задание 1 */
+.result-block:nth-child(1) { border-left: 5px solid #fd7e14; }
+/* Задание 2 */
+.result-block:nth-child(2) { border-left: 5px solid #007bff; }
+/* Задание 3 */
+.result-block:nth-child(3) { border-left: 5px solid #6f42c1; }
+/* Задание 4 */
+.result-block:nth-child(4) { border-left: 5px solid #dc3545; }
+
+.task1-result p {
+    background: #fff3e6;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.task2-result {
+    background: #e6f3ff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Оглавление */
+.toc {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.toc li {
+    margin: 5px 0;
+}
+
+.toc a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+.toc-level-1 { font-weight: bold; }
+.toc-level-2 { margin-left: 20px; }
+.toc-level-3 { margin-left: 40px; }
+
+.full-text {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+/* Задание 4 */
+.task4-result {
+    background: #fff0f0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Статистика */
+.stats {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+/* Пустое состояние */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
